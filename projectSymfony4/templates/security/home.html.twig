@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashbord {% endblock %}
+
+{% block body %}
+
+    <div align="center">
+
+        {% if is_granted('ROLE_ADMIN') %}
+
+
+            <button class="btn btn-secondary col-md-8 mb-2 mt-2"><h1> Hello Dashbord Admin  </h1></button>
+            <button class="btn btn-danger col-md-2"><a href="{{ path('app_logout') }}"><h1 class="logout"><i class="fas fa-sign-out-alt"></i>Log out</h1> </a></button>
+                <button class="alert-danger col-md-2 m-3 p-1"><a href="{{ path('app_signup') }}"><i class="fas fa-user-plus"></i> Add User</a></button>
+                <button class="alert-success col-md-2 m-3 p-1" ><a href="{{ path('cv_index') }}"><i class="fas fa-file-upload"></i> Upload CV</a></button>
+                <button class="alert-primary col-md-2 m-3 p-1"><a href="{{ path('actuality') }}"><i class="fas fa-list-ul"></i> Actuality</a></button>
+                <button class="alert-warning col-md-2 m-3 p-1"><a href="{{ path('conge_list') }}"><i class="fas fa-list-ul"></i>  Conge</a></button>
+                </div>
+
+        {% endif %}
+        {% if is_granted('ROLE_USER') %}
+
+            <button class="btn btn-secondary col-md-10 m-2 "><h1> Hello Dashbord User  </h1></button><br>
+            <button class="alert-danger col-md-2 m-3 p-1"><a href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt"></i> Log out</a></button>
+            <div class="home">
+            <button class="alert-success col-md-2 m-3 p-1"><a href="{{ path('cv_new') }}"> <i class="fas fa-file-upload"></i> Upload CV</a></button>
+            <button class="alert-primary col-md-2 m-3 p-1"><a href="{{ path('actuality') }}"><i class="fas fa-list-ul"></i>  Actuality</a></button>
+            <button class="alert-indo col-md-2 m-3 p-1"><a href="{{ path('conge_demande') }}"><i class="fas fa-list-ul"></i> Conge</a></button>
+    </div>
+        {% endif %}
+
+
+
+    </div>
+{% endblock %}

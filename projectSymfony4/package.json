@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "@symfony/webpack-encore": "^0.27.0",
+    "bootstrap": "^4.3.1",
+    "core-js": "^3.0.0",
+    "popper.js": "^1.15.0",
+    "webpack-notifier": "^1.7.0"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
+  },
+  "dependencies": {
+    "@fullcalendar/core": "^4.2.0",
+    "@fullcalendar/daygrid": "^4.2.0",
+    "@fullcalendar/interaction": "^4.2.0",
+    "babel-preset-es2017": "^6.24.1",
+    "copy-webpack-plugin": "^5.0.3",
+    "datatables.net-bs4": "^1.10.19",
+    "jquery": "^3.4.1",
+    "select2": "^4.0.7-rc.0",
+    "vue-week-picker": "^1.1.8"
+  }
+}

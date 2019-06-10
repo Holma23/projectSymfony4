@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Cv{% endblock %}
+     {% block stylesheets %}
+         {{ parent() }}
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css"/>
+
+     {% endblock %}
+{% block body %}
+ {% for message in app.flashes('success') %}
+     <div class="alert alert-success">
+         {{ message }}
+     </div>
+ {% endfor %}
+{% for message in app.flashes('refus') %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+{% endfor %}
+<div align="center">
+    <br>
+    <button class="btn btn-secondary col-md-7 m-5 "><h1>Demande Conge  {{ conge.User }} </h1></button><br>
+    <body class="col-md-8">
+
+        {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+        {{ form_start(form, {'attr':{'novalidate':'novalidate'}}) }}
+        {{ form_start(form,{ 'attr':{'id':'conge'}}) }}
+
+        {{ form_label(form.nature) }}<font color="#dc143c">*</font><i class="far fa-flushed"></i>
+        {{ form_widget(form.nature) }}
+        <font color="#dc143c">{{ form_errors(form.nature) }}</font>
+
+        {#  {{ form_label(form.date) }}<font color="#dc143c">*</font>
+          {{ form_widget(form.date) }}
+          {{ form_help(form.date) }}
+          <font color="#dc143c">{{ form_errors(form.date) }}</font>#}
+
+        {{ form_widget(form.date,{'id':'datetime1','attr':{'readonly':true }}) }}
+
+        {{ form_label(form.nbreJour) }}<font color="#dc143c">*</font>
+        {{ form_widget(form.nbreJour) }}
+        <font color="#dc143c">{{ form_errors(form.nbreJour) }}</font>
+
+        <button class="alert-dark col-md-12 mt-2" type="submit">Envoyer</button>
+        {{ form_end(form) }}
+        <button class="alert-dark col-md-12 mt-2"><a href="{{ path('app_homeUser') }}">Home</a></button>
+
+
+
+
+
+
+            <script>
+                // var dateToday = new Date();
+                /*  $( function() {
+                      $( "#datepicker" ).datepicker({
+                          showOn: "button",
+                          buttonImage: "theme/img/calendar.gif",
+                          buttonImageOnly: true,
+                          buttonText: "Select date",
+                          minDate: dateToday
+                      });
+                  } );
+                  */
+            </script>
+
+
+        {# <p>Date<font color="#dc143c"> *</font><br> <input class="btn btn-light col-md-7"type="text" id="datepicker" ></p>#}
+
+        {% endblock %}
+        {% block javascripts %}
+        {{ parent() }}
+       {{ encore_entry_script_tags('conge') }}
+
+
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+            <link rel="stylesheet" href="/resources/demos/style.css">
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script>
+
+            /*  $(document).ready(function() {
+                  // you may need to change this code if you are not using Bootstrap Datepicker
+                  $('.js-datepicker').datepicker({
+                      format: 'yyyy-mm-dd',
+                      minDate: dateToday,
+
+                  });
+              });
+              */
+        </script>
+
+
+        {#<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css"></script>#}
+        <script type="text/javascript">
+            $("#datetime1").datepicker({
+                language:  'fr',
+                format: 'dd-MM-yyyy',
+                autoclose: true
+            });
+
+        </script>
+    </body>
+
+
+{% endblock %}
+

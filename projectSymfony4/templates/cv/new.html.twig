@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Cv{% endblock %}
+
+{% block body %}
+{% block stylesheets %}
+{{ parent() }}
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/flick/jquery-ui.css">
+{% endblock %}
+
+
+
+
+
+<div align="center">
+    <div id='calendar' class="col-md-10"></div>
+</div>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div align="center">
+    <br>
+    <button class="btn btn-secondary col-md-7 m-5 "><h1>Dashbord  New Cv</h1></button><br>
+    <div class="col-md-8">
+
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+    {{ form_start(form, {'attr':{'novalidate':'novalidate'}}) }}
+
+    {{ form_label(form.titre) }}<font color="#dc143c">*</font>
+    {{ form_widget(form.titre) }}
+    <font color="#dc143c">{{ form_errors(form.titre) }}</font>
+
+    {{ form_label(form.description) }}<font color="#dc143c">*</font>
+    {{ form_widget(form.description) }}
+    {{ form_help(form.description) }}
+    <font color="#dc143c">{{ form_errors(form.description) }}</font>
+
+    {{ form_label(form.file) }}<font color="#dc143c">*</font>
+    {{ form_widget(form.file) }}
+    <font color="#dc143c">{{ form_errors(form.file) }}</font>
+
+
+    <button class="alert-dark col-md-12 mt-2" type="submit">Register</button>
+    {{ form_end(form) }}
+        <button class="alert-dark col-md-12 mt-2"><a href="{{ path('app_home') }}"><i class="fas fa-home"></i> Home</a></button>
+
+    </div>
+        {% endblock %}
+        {% block javascripts %}
+
+        {{ parent() }}
+        {{ encore_entry_script_tags('cv') }}
+        {{ encore_entry_script_tags('calender') }}
+    </div>
+    </div>
+{% endblock %}

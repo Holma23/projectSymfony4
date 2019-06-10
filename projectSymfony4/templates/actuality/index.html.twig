@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ActualityController!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper" style="margin-left: 120px">
+    <h1 align="center " class="mt-5 ">Hello Actuality ! ✅</h1>
+
+    <div class="row p-5"  >
+        {#{% set h=0 %}#}
+    {% for actuality in actualities %}
+        <div class="col-md-3 m-2">
+{#{% set h=h+1 %}#}
+        {#{%  if h%4==0 %}#}
+
+            {#{% endif %}#}
+        {#{%  if h%4==0 %}#}
+            {#</div>#}
+        {#{% endif %}#}
+
+    <div class="card" style="width: 22rem;" >
+        <img class="card-img-top" src="{{ actuality.image }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{actuality.title  }}</h5>
+            <p class="card-text">{{ actuality.description}}</p>
+        </div>
+    </div>
+    </div>
+
+
+    {% endfor %}
+</div>
+    </div>
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/S7J2/src/Controller/ActualityController.php'|file_link(0) }}">src/Controller/ActualityController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/S7J2/templates/actuality/index.html.twig'|file_link(0) }}">templates/actuality/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}

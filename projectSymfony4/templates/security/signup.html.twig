@@ -1,0 +1,53 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}New Cv{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div align="center">
+    <br>
+    <button class="btn btn-secondary col-md-5 m-5 "><h1>Dashbord Admin New Cv</h1></button><br>
+    <div class="col-md-5">
+
+        {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+        {{ form_start(form, {'attr':{'novalidate':'novalidate'}}) }}
+
+        {{ form_label(form.email) }}<font color="#dc143c"> *</font>
+        {{ form_widget(form.email) }}
+        {#<font color="#dc143c">{{ form_errors(form.email) }}</font>#}
+
+        {{ form_label(form.firstname) }}
+        {{ form_widget(form.firstname) }}
+        {{ form_help(form.firstname) }}
+        <font color="#dc143c">{{ form_errors(form.firstname) }}</font>
+
+        {{ form_label(form.lastname) }}
+        {{ form_widget(form.lastname) }}
+        {{ form_help(form.lastname) }}
+        {#<font color="#dc143c">{{ form_errors(form.lastname) }}</font>#}
+
+        {{ form_label(form.plainPassword) }}<font color="#dc143c"> *</font>
+        {{ form_widget(form.plainPassword) }}
+        {#<font color="#dc143c">{{ form_errors(form.plainPassword) }}</font>#}
+
+        {{ form_label(form.username) }}<font color="#dc143c"> *</font>
+        {{ form_widget(form.username) }}
+        {{ form_help(form.username) }}
+       {# <font color="#dc143c">{{ form_errors(form.username) }}</font>#}
+
+
+        <button class="btn btn-secondary col-md-12 mt-2" type="submit">Sign up</button>
+        {{ form_end(form) }}
+        <button class="btn btn-info col-md-12 mt-2"><a href="{{ path('app_home') }}">Home</a></button>
+
+    </div>
+    <div>
+
+
+{% endblock %}

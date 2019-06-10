@@ -1,0 +1,20 @@
+{"base_url":"",
+  "routes":{
+    "cv_new":{
+      "tokens":[["text","\/new"]],
+      "defaults":[],
+      "requirements":[],
+      "hosttokens":[],
+      "methods":[],
+      "schemes":[]
+  },
+    "conge_demande":{
+      "tokens":[["text","\/demandeConge"]],
+      "defaults":[],
+      "requirements":[],
+      "hosttokens":[],
+      "methods":[],
+      "schemes":[]
+    }
+},
+  "prefix":"","host":"localhost","port":"","scheme":"http"}

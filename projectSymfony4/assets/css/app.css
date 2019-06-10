@@ -1,0 +1,40 @@
+@import "~bootstrap";
+@import "~@fortawesome/fontawesome-free";
+@import "~datatables.net-bs4";
+@import "~@fullcalendar/core/main.css";
+@import "~@fullcalendar/daygrid/main.css";
+body {
+    background-color: lightgray;
+}
+/*img{*/
+    /*height:50%;*/
+/*}*/
+.calendar{
+    align:center;
+}
+.bigLogin{
+
+    border: 2px solid green;
+    /*justify-content: flex-end;*/
+}
+.login{
+    color: black;
+}
+.home {
+    display: flex;
+    flex-direction: column;
+}
+.logout{
+   color:black;
+    hover:black;
+
+}
+a{
+    color:black;
+    hover:black;
+    text-decoration:none
+}
+img_cv{
+    height:20Px;
+}
+

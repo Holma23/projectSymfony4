@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cv{% endblock %}
+
+{% block body %}
+    <div align="center">
+    <br>
+    <button class="btn btn-secondary col-md-8 m-5 "><h1>Dashbord Admin Show Cv user {{cv.user}}</h1></button><br>
+    <div class="col-md-7">
+    <h1>Cv</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ cv.id }}</td>
+        </tr>
+        <tr>
+            <th>File</th>
+            <td ><a href="uploads/{{ cv.file}}"><img src="{{ asset('/build/images/telecharger.7759ff2e.ico') }}" width="30" height="30"></a> </td>
+
+            {# <img src="{{ asset('build/images/logo.a301e16e.png') }}">
+             <img src="{{ asset('/build/images/telecharger.7759ff2e.ico') }}">
+             <img src="{{ asset('build/images/ahlem.60891a8e.jpg') }}">#}
+
+
+        </tr>
+        <tr>
+            <th>Titre</th>
+            <td>{{ cv.titre }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ cv.description }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+        <button class="alert-secondary col-md-12 mb-2 p-1"><a href="{{ path('cv_index') }}">
+                <i class="fas fa-list-ul"></i> back to list</a></button>
+        <button class="btn btn-secondary  col-md-12"><a href="{{ path('app_home') }}">
+                <i class="fas fa-home"></i> Home</a></button>
+{#       <a href="{{ asset('pubic\uploads' ~ cv.file) }}">View file (PDF)</a>#}
+    </div>
+    </div>
+
+{% endblock %}
+{#
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}#}

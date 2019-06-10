@@ -1,0 +1,32 @@
+<table class="table">
+    <tbody>
+    <tr>
+        <th>Id</th>
+        <td>{{ conge.id }}</td>
+    </tr>
+    <tr>
+        <th>Nature</th>
+        <td > {{ conge.nature }} </td>
+    </tr>
+    <tr>
+        <th>Etat</th>
+        <td>{{ conge.etat }}</td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td>{{ conge.date|date }}</td>
+    </tr>
+    <tr>
+        <th>Employer</th>
+        <td>{{ conge.user }}</td>
+    </tr>
+    <tr>
+        <th>Action</th>
+        <td>
+            <button class="alert-success col-md-4 mb-2"><a href="{{ path('conge_accept', {'id': conge.id}) }}">Accept</a></button>
+            <br>
+            <button class="alert-danger col-md-4"><a href="{{ path('conge_refus', {'id': conge.id}) }}">Refus</a></button>
+        </td>
+    </tr>
+    </tbody>
+</table>
