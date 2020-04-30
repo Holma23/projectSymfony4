@@ -22,7 +22,7 @@
     "babel-preset-es2017": "^6.24.1",
     "copy-webpack-plugin": "^5.0.3",
     "datatables.net-bs4": "^1.10.19",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "select2": "^4.0.7-rc.0",
     "vue-week-picker": "^1.1.8"
   }
