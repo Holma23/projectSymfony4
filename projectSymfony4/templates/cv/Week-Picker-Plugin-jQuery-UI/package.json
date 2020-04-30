@@ -23,7 +23,7 @@
   "homepage": "http://www.mihai-marica.ro",
   "license": "MIT",
   "dependencies": {
-    "jquery": ">=1.5.1",
+    "jquery": ">=3.5.0",
     "jquery-ui-dist": "^1.12.1"
   },
   "devDependencies": {
